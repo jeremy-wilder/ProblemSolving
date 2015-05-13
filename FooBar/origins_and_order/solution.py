@@ -24,6 +24,10 @@ def answer(x, y, z):
 	if(x == y and y == z):
 		return formatAnswer(x, y, z)
 	
+	if(list[2] > 31):
+	    return "Ambiguous"
+	
+
 	#if two lowest numbers are the same
 	if(list[0] == list[1]):
 		#and less than 13
@@ -33,12 +37,17 @@ def answer(x, y, z):
 			return formatAnswer(list[0], list[1], list[2])
 		return formatAnswer(list[2], list[1], list[0])
 	
+
+	
 	#if two highest numbers are the same
 	if(list[1] == list[2]):
 		#and less than 13
 		if(list[2] < 13):
 			return "Ambiguous"
 		return formatAnswer(list[0], list[1], list[2])
+	
+	if(list[2] < 31):
+	    return "Ambiguous"
 	
 	#if all different values, only need to check first two
 	if(list[0] < 13 and list[1] < 13):
